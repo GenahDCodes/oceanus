@@ -77,7 +77,7 @@ export default function TrackingDetailPage() {
         </div>
 
         <div className="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-5">
-          <ShipmentSummary shipment={shipment} />
+          <ShipmentSummary trackingCode={code} />
           <ActivityFeed timeline={shipment.timeline} />
         </div>
       </div>

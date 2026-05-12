@@ -1,16 +1,61 @@
 'use client';
 
+import shipmentsData from '@/data/shipments.json';
 import { formatDate } from '@/lib/utils';
 
-export default function ShipmentSummary({ shipment }) {
-  // Calculate days in transit
-  const departureEvent = shipment.timeline?.find(event => event.event === 'Shipment departed terminal');
-  const departureDate = departureEvent ? new Date(departureEvent.timestamp) : new Date();
+function normalizeLocation(location) {
+  if (!location) return { label: 'N/A', port: 'N/A' };
+
+  if (typeof location === 'string') {
+    return { label: location, port: 'N/A' };
+  }
+
+  const { city, country, port } = location;
+  const label = [city, country].filter(Boolean).join(', ') || 'N/A';
+
+  return {
+    label,
+    port: port || 'N/A',
+  };
+}
+
+function getEventDate(event) {
+  return event?.timestamp || event?.date || null;
+}
+
+function normalizeShipment(rawShipment) {
+  if (!rawShipment) return null;
+
+  return {
+    id: rawShipment.id || 'N/A',
+    origin: normalizeLocation(rawShipment.origin),
+    destination: normalizeLocation(rawShipment.destination),
+    cargo: rawShipment.cargo || rawShipment.cargoDescription || 'N/A',
+    weight: rawShipment.weight || 'N/A',
+    container: rawShipment.container || rawShipment.containerNumber || 'N/A',
+    vessel: rawShipment.vessel || rawShipment.vesselName || 'N/A',
+    eta: rawShipment.eta || null,
+    value: rawShipment.value || 'N/A',
+    timeline: rawShipment.timeline || [],
+  };
+}
+
+export default function ShipmentSummary({ trackingCode = '' }) {
+  const shipment = normalizeShipment(
+    shipmentsData.find((record) => record.id.toUpperCase() === trackingCode.toUpperCase())
+  );
+
+  if (!shipment) {
+    return null;
+  }
+
+  const departureEvent = shipment.timeline?.find((event) => event.event === 'Shipment departed terminal');
+  const departureDate = departureEvent ? new Date(getEventDate(departureEvent)) : new Date();
   const today = new Date();
   const daysInTransit = Math.floor((today - departureDate) / (1000 * 60 * 60 * 24));
 
   // Calculate days remaining
-  const etaDate = new Date(shipment.eta);
+  const etaDate = shipment.eta ? new Date(shipment.eta) : new Date();
   const daysRemaining = Math.floor((etaDate - today) / (1000 * 60 * 60 * 24));
 
   return (
@@ -21,17 +66,17 @@ export default function ShipmentSummary({ shipment }) {
         <div className="space-y-4">
           <div>
             <p className="text-xs uppercase tracking-widest text-steel-400">Origin</p>
-            <p className="text-sm font-semibold text-navy-900 mt-1">{shipment.origin.city}, {shipment.origin.country}</p>
+            <p className="text-sm font-semibold text-navy-900 mt-1">{shipment.origin.label}</p>
             <p className="text-xs text-steel-400">Port: {shipment.origin.port}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-widest text-steel-400">Destination</p>
-            <p className="text-sm font-semibold text-navy-900 mt-1">{shipment.destination.city}, {shipment.destination.country}</p>
+            <p className="text-sm font-semibold text-navy-900 mt-1">{shipment.destination.label}</p>
             <p className="text-xs text-steel-400">Port: {shipment.destination.port}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-widest text-steel-400">ETA</p>
-            <p className="text-sm font-semibold text-navy-900 mt-1">{formatDate(shipment.eta)}</p>
+            <p className="text-sm font-semibold text-navy-900 mt-1">{shipment.eta ? formatDate(shipment.eta) : 'N/A'}</p>
           </div>
         </div>
 
