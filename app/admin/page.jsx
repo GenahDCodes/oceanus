@@ -97,14 +97,3 @@ export default function AdminDashboard() {
     </div>
   );
 }
-          shipment={editingShipment}
-          onClose={() => {
-            setEditingId(null);
-            setEditingShipment(null);
-          }}
-          onSave={handleSave}
-        />
-      )}
-    </div>
-  );
-}
