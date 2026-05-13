@@ -71,13 +71,13 @@ export default function ShipmentTable({ shipments, onEdit, onDelete }) {
   const statuses = ['all', 'Processing', 'In Transit', 'Customs Hold', 'Delayed', 'Out for Delivery', 'Delivered'];
 
   return (
-    <div className="card p-6">
-      <h2 className="text-xl font-bold text-navy-900 mb-6">Shipment Management</h2>
+    <div className="card p-4 sm:p-6">
+      <h2 className="text-lg sm:text-xl font-bold text-navy-900 mb-4 sm:mb-6">Shipment Management</h2>
 
       {/* Filters */}
-      <div className="mb-6 flex flex-col gap-4">
-        <div className="flex items-center gap-2 bg-steel-50 px-4 py-3 rounded border border-steel-200">
-          <Search size={18} className="text-steel-400" />
+      <div className="mb-6 flex flex-col gap-3 sm:gap-4">
+        <div className="flex items-center gap-2 bg-steel-50 px-3 sm:px-4 py-2 sm:py-3 rounded border border-steel-200">
+          <Search size={16} className="text-steel-400 flex-shrink-0" />
           <input
             type="text"
             placeholder="Search by ID, origin, destination..."
@@ -86,7 +86,7 @@ export default function ShipmentTable({ shipments, onEdit, onDelete }) {
               setSearchTerm(e.target.value);
               setCurrentPage(1);
             }}
-            className="bg-transparent flex-1 outline-none text-steel-600 placeholder-steel-400"
+            className="bg-transparent flex-1 outline-none text-sm text-steel-600 placeholder-steel-400"
           />
         </div>
 

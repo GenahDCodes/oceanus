@@ -31,24 +31,24 @@ const industries = [
 
 export default function IndustrySolutions() {
   return (
-    <section className="py-20 bg-white border-t border-gray-200">
-      <div className="container-max">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold text-navy-900 mb-4">Industry Solutions</h2>
-          <p className="text-xl text-gray-600">Specialized logistics for every sector</p>
+    <section className="py-12 sm:py-16 md:py-20 bg-white border-t border-steel-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-8 sm:mb-10 md:mb-12">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900 mb-2 sm:mb-4">Industry Solutions</h2>
+          <p className="text-sm sm:text-base md:text-lg text-steel-400">Specialized logistics for every sector</p>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-12 sm:space-y-16">
           {industries.map((industry, index) => (
             <div
               key={index}
-              className={`grid md:grid-cols-2 gap-12 items-center ${
+              className={`grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center ${
                 index % 2 === 1 ? 'md:grid-flow-dense' : ''
               }`}
             >
               {/* Image */}
               <div className={index % 2 === 1 ? 'md:order-last' : ''}>
-                <div className="relative h-80 rounded-lg overflow-hidden shadow-lg">
+                <div className="relative h-48 sm:h-64 md:h-80 rounded overflow-hidden shadow-md hover:shadow-lg transition-shadow">
                   <Image
                     src={industry.image}
                     alt={industry.title}
@@ -60,16 +60,16 @@ export default function IndustrySolutions() {
 
               {/* Content */}
               <div>
-                <h3 className="text-3xl font-bold text-navy-900 mb-4">{industry.title}</h3>
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed">{industry.description}</p>
+                <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-navy-900 mb-2 sm:mb-4">{industry.title}</h3>
+                <p className="text-sm sm:text-base md:text-lg text-steel-400 mb-4 sm:mb-6 leading-relaxed">{industry.description}</p>
                 
                 <div className="space-y-3">
-                  <p className="font-semibold text-navy-900">Key Features:</p>
-                  <div className="flex flex-wrap gap-3">
+                  <p className="text-xs sm:text-sm font-semibold text-navy-900">Key Features:</p>
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
                     {industry.features.map((feature, i) => (
                       <span
                         key={i}
-                        className="bg-ocean-50 text-ocean-700 px-4 py-2 rounded-full text-sm font-semibold border border-ocean-200"
+                        className="bg-ocean-100 text-ocean-600 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-semibold border border-ocean-200"
                       >
                         {feature}
                       </span>

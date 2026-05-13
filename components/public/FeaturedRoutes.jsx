@@ -31,17 +31,17 @@ const routes = [
 
 export default function FeaturedRoutes() {
   return (
-    <section className="py-20 bg-gradient-to-br from-navy-50 to-ocean-50 border-t border-gray-200">
-      <div className="container-max">
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold text-navy-900 mb-4">Featured Trade Routes</h2>
-          <p className="text-xl text-gray-600">Our most active and reliable shipping corridors</p>
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-navy-900 to-navy-800 border-t border-steel-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-8 sm:mb-10 md:mb-12">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4">Featured Trade Routes</h2>
+          <p className="text-sm sm:text-base md:text-lg text-steel-300">Our most active and reliable shipping corridors</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
           {routes.map((route, index) => (
             <div key={index} className="group cursor-pointer">
-              <div className="relative h-64 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all">
+              <div className="relative h-48 sm:h-64 rounded overflow-hidden shadow-md hover:shadow-xl transition-all">
                 <Image
                   src={route.image}
                   alt={route.name}
@@ -50,11 +50,11 @@ export default function FeaturedRoutes() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0"></div>
                 
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-2">{route.name}</h3>
-                  <p className="text-gray-200 mb-3">{route.description}</p>
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                  <h3 className="font-display text-lg sm:text-xl md:text-2xl font-bold mb-1 sm:mb-2">{route.name}</h3>
+                  <p className="text-xs sm:text-sm text-steel-200 mb-3">{route.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold bg-ocean-600 px-3 py-1 rounded-full">
+                    <span className="text-xs sm:text-sm font-semibold bg-ocean-600 px-2 sm:px-3 py-1 rounded-full">
                       {route.stats}
                     </span>
                   </div>

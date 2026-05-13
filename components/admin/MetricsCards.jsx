@@ -17,15 +17,15 @@ export default function MetricsCards({ shipments }) {
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
       {cards.map((card) => {
         const Icon = card.icon;
         return (
-          <div key={card.label} className="bg-white border border-steel-200 rounded p-6 shadow-sm">
-            <p className="text-sm text-steel-400">{card.label}</p>
+          <div key={card.label} className="bg-white border border-steel-200 rounded p-4 sm:p-6 shadow-sm">
+            <p className="text-xs sm:text-sm text-steel-400">{card.label}</p>
             <div className="mt-3 flex items-end justify-between">
-              <p className="text-3xl font-bold text-navy-900">{card.value}</p>
-              <Icon className="w-5 h-5 text-ocean-500" />
+              <p className="text-2xl sm:text-3xl font-bold text-navy-900">{card.value}</p>
+              <Icon className="w-4 sm:w-5 h-4 sm:h-5 text-ocean-500" />
             </div>
           </div>
         );

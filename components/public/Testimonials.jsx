@@ -28,24 +28,24 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-20 bg-steel-100 border-t border-steel-200">
+    <section className="py-12 sm:py-16 md:py-20 bg-steel-100 border-t border-steel-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10">
-          <h2 className="font-display text-4xl font-bold text-navy-900">Trusted by Global Enterprise Teams</h2>
-          <p className="mt-2 text-steel-400">Customer outcomes from logistics, procurement, and operations leaders.</p>
+        <div className="mb-8 sm:mb-10">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900">Trusted by Global Enterprise Teams</h2>
+          <p className="mt-2 text-sm sm:text-base text-steel-400">Customer outcomes from logistics, procurement, and operations leaders.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-steel-100 border border-steel-200 p-6 rounded">
+            <div key={index} className="bg-steel-100 border border-steel-200 p-4 sm:p-6 rounded">
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-accent fill-accent" />
+                  <Star key={i} className="w-3 sm:w-4 h-3 sm:h-4 text-accent fill-accent" />
                 ))}
               </div>
-              <p className="text-sm text-navy-800 mt-4 leading-relaxed">"{testimonial.quote}"</p>
-              <div className="border-t border-steel-200 pt-4 mt-4 flex items-center gap-3">
-                <div className="relative w-11 h-11 rounded-full overflow-hidden">
+              <p className="text-sm text-navy-800 mt-3 sm:mt-4 leading-relaxed">"{testimonial.quote}"</p>
+              <div className="border-t border-steel-200 pt-3 sm:pt-4 mt-3 sm:mt-4 flex items-center gap-3">
+                <div className="relative w-10 sm:w-11 h-10 sm:h-11 rounded-full overflow-hidden">
                   <Image
                     src={testimonial.avatar}
                     alt={testimonial.author}

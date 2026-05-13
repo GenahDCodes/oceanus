@@ -59,11 +59,11 @@ export default function ShipmentSummary({ trackingCode = '' }) {
   const daysRemaining = Math.floor((etaDate - today) / (1000 * 60 * 60 * 24));
 
   return (
-    <div className="bg-white border border-steel-200 rounded p-6">
-      <h2 className="text-lg font-semibold text-navy-900 mb-6">Shipment Details</h2>
+    <div className="bg-white border border-steel-200 rounded p-4 sm:p-6">
+      <h2 className="text-lg font-semibold text-navy-900 mb-4 sm:mb-6">Shipment Details</h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <div className="space-y-3 sm:space-y-4">
           <div>
             <p className="text-xs uppercase tracking-widest text-steel-400">Origin</p>
             <p className="text-sm font-semibold text-navy-900 mt-1">{shipment.origin.label}</p>
@@ -80,7 +80,7 @@ export default function ShipmentSummary({ trackingCode = '' }) {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4">
           <div className="bg-steel-100 border border-steel-200 rounded p-3">
             <p className="text-xs text-steel-400">Tracking ID</p>
             <p className="font-mono text-sm text-ocean-600 mt-1">{shipment.id}</p>

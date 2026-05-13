@@ -55,19 +55,19 @@ export default function ServiceCards() {
   };
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-12 sm:py-16 md:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10">
-          <h2 className="font-display text-4xl font-bold text-navy-900">Service Portfolio</h2>
-          <p className="mt-2 text-steel-400">Mode-specific capabilities designed for regulated, time-critical cargo.</p>
+        <div className="mb-8 sm:mb-10">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900">Service Portfolio</h2>
+          <p className="mt-2 text-sm sm:text-base text-steel-400">Mode-specific capabilities designed for regulated, time-critical cargo.</p>
         </div>
 
-        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <motion.div key={index} variants={item} className="bg-white border border-steel-200 rounded overflow-hidden hover:shadow-md transition-shadow">
-                <div className="relative h-48 w-full">
+                <div className="relative h-40 sm:h-48 w-full">
                   <Image
                     src={service.image}
                     alt={service.title}
@@ -75,11 +75,11 @@ export default function ServiceCards() {
                     className="h-48 w-full object-cover"
                   />
                 </div>
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   <div className="w-10 h-10 rounded bg-ocean-100 text-ocean-600 flex items-center justify-center mb-3">
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg font-semibold text-navy-900">{service.title}</h3>
+                  <h3 className="text-base sm:text-lg font-semibold text-navy-900">{service.title}</h3>
                   <p className="mt-2 text-sm text-steel-400 leading-relaxed">{service.description}</p>
                 </div>
               </motion.div>

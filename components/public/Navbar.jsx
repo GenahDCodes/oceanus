@@ -17,28 +17,28 @@ export default function Navbar() {
   return (
     <nav className={`sticky top-0 z-50 bg-white border-b border-steel-200 transition-shadow ${scrolled ? 'shadow-sm' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <div className="w-10 h-10 bg-navy-900 rounded flex items-center justify-center">
-              <span className="text-white font-bold text-lg">◊</span>
+            <div className="w-8 sm:w-10 h-8 sm:h-10 bg-navy-900 rounded flex items-center justify-center">
+              <span className="text-white font-bold text-sm sm:text-lg">◊</span>
             </div>
             <div className="hidden sm:block">
-              <p className="font-display text-2xl font-bold tracking-tight text-navy-900">Oceanus</p>
-              <p className="text-[10px] tracking-[0.2em] text-steel-400 uppercase">Global Shipping</p>
+              <p className="font-display text-xl sm:text-2xl font-bold tracking-tight text-navy-900">Oceanus</p>
+              <p className="text-[8px] sm:text-[10px] tracking-[0.2em] text-steel-400 uppercase">Global Shipping</p>
             </div>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8">
-            <Link href="/" className="text-sm font-medium text-navy-800 hover:text-ocean-500 transition-colors">
+          <div className="hidden lg:flex items-center gap-6 lg:gap-8">
+            <Link href="/" className="text-xs sm:text-sm font-medium text-navy-800 hover:text-ocean-500 transition-colors">
               Home
             </Link>
-            <Link href="#services" className="text-sm font-medium text-navy-800 hover:text-ocean-500 transition-colors">
+            <Link href="#services" className="text-xs sm:text-sm font-medium text-navy-800 hover:text-ocean-500 transition-colors">
               Services
             </Link>
-            <Link href="#tracking" className="text-sm font-medium text-navy-800 hover:text-ocean-500 transition-colors">
+            <Link href="#tracking" className="text-xs sm:text-sm font-medium text-navy-800 hover:text-ocean-500 transition-colors">
               Track
             </Link>
-            <Link href="#solutions" className="text-sm font-medium text-navy-800 hover:text-ocean-500 transition-colors">
+            <Link href="#solutions" className="text-xs sm:text-sm font-medium text-navy-800 hover:text-ocean-500 transition-colors">
               Solutions
             </Link>
             {/* <Link href="/admin" className="text-sm font-medium text-navy-800 hover:text-ocean-500 transition-colors">
@@ -70,17 +70,17 @@ export default function Navbar() {
 
         {mobileMenuOpen && (
           <div className="lg:hidden pb-4 border-t border-steel-200">
-            <div className="flex flex-col gap-4 pt-4">
-              <Link href="/" className="text-sm font-medium text-navy-800 px-1">
+            <div className="flex flex-col gap-3 sm:gap-4 pt-3 sm:pt-4">
+              <Link href="/" className="text-xs sm:text-sm font-medium text-navy-800 px-1">
                 Home
               </Link>
-              <Link href="#services" className="text-sm font-medium text-navy-800 px-1">
+              <Link href="#services" className="text-xs sm:text-sm font-medium text-navy-800 px-1">
                 Services
               </Link>
-              {/* <Link href="#tracking" className="text-sm font-medium text-navy-800 px-1">
+              {/* <Link href="#tracking" className="text-xs sm:text-sm font-medium text-navy-800 px-1">
                 Track Shipment
               </Link> */}
-              <Link href="#solutions" className="text-sm font-medium text-navy-800 px-1">
+              <Link href="#solutions" className="text-xs sm:text-sm font-medium text-navy-800 px-1">
                 Solutions
               </Link>
               {/* <Link href="/admin" className="text-sm font-medium text-navy-800 px-1">

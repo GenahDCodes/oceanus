@@ -32,18 +32,18 @@ const solutions = [
 
 export default function EnterpriseSolutions() {
   return (
-    <section id="solutions" className="py-20 bg-white border-t border-steel-200">
+    <section id="solutions" className="py-12 sm:py-16 md:py-20 bg-white border-t border-steel-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10">
-          <h2 className="font-display text-4xl font-bold text-navy-900">Enterprise Solutions</h2>
-          <p className="mt-2 text-steel-400">Industry-specialized capabilities configured for complex global operations.</p>
+        <div className="mb-8 sm:mb-10">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900">Enterprise Solutions</h2>
+          <p className="mt-2 text-sm sm:text-base text-steel-400">Industry-specialized capabilities configured for complex global operations.</p>
         </div>
 
-        <div className="space-y-10">
+        <div className="space-y-8 sm:space-y-10">
           {solutions.map((solution, index) => (
             <div
               key={solution.title}
-              className={`flex flex-col lg:flex-row gap-8 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+              className={`flex flex-col lg:flex-row gap-6 sm:gap-8 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
             >
               <div className="w-full lg:w-1/2">
                 <Image
@@ -51,13 +51,13 @@ export default function EnterpriseSolutions() {
                   alt={solution.title}
                   width={900}
                   height={560}
-                  className="w-full h-64 lg:h-72 object-cover rounded"
+                  className="w-full h-48 sm:h-64 lg:h-72 object-cover rounded"
                 />
               </div>
               <div className="w-full lg:w-1/2">
                 <p className="text-xs uppercase tracking-[0.2em] text-ocean-500 mb-2">Industry Program</p>
-                <h3 className="font-display text-3xl font-bold text-navy-900">{solution.title}</h3>
-                <p className="mt-3 text-steel-400 leading-relaxed">{solution.description}</p>
+                <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900">{solution.title}</h3>
+                <p className="mt-3 text-sm sm:text-base text-steel-400 leading-relaxed">{solution.description}</p>
                 {/* <button className="mt-5 border border-navy-900 text-navy-900 px-4 py-2 text-sm font-semibold rounded hover:bg-navy-900 hover:text-white transition-colors">
                   Explore Solution
                 </button> */}

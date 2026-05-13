@@ -43,25 +43,25 @@ export default function QuickActionCards() {
   };
 
   return (
-    <section id="quick-actions" className="py-14 bg-steel-100">
+    <section id="quick-actions" className="py-12 sm:py-14 bg-steel-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <h2 className="font-display text-4xl font-bold text-navy-900">Quick Actions</h2>
-          <p className="mt-2 text-base text-steel-400">Operational shortcuts for customers and logistics teams.</p>
+        <div className="mb-6 sm:mb-8">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900">Quick Actions</h2>
+          <p className="mt-2 text-sm sm:text-base text-steel-400">Operational shortcuts for customers and logistics teams.</p>
         </div>
 
-        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
           {actions.map((action, index) => {
             const Icon = action.icon;
             return (
               <motion.div
                 key={index}
                 variants={item}
-                className="bg-white border border-steel-200 rounded p-6 flex flex-col items-center gap-3 hover:shadow-md transition-shadow cursor-pointer"
+                className="bg-white border border-steel-200 rounded p-4 sm:p-6 flex flex-col items-center gap-2 sm:gap-3 hover:shadow-md transition-shadow cursor-pointer"
               >
-                <Icon className="text-ocean-500 w-8 h-8" />
-                <p className="text-sm font-semibold text-navy-900 text-center">{action.title}</p>
-                <p className="text-xs text-steel-400 text-center">{action.description}</p>
+                <Icon className="text-ocean-500 w-6 sm:w-8 h-6 sm:h-8" />
+                <p className="text-xs sm:text-sm font-semibold text-navy-900 text-center">{action.title}</p>
+                <p className="text-[10px] sm:text-xs text-steel-400 text-center">{action.description}</p>
               </motion.div>
             );
           })}

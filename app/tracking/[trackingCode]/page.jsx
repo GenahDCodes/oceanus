@@ -28,9 +28,9 @@ export default function TrackingDetailPage() {
     return (
       <main className="min-h-screen bg-steel-100">
         <Navbar />
-        <div className="max-w-5xl mx-auto px-4 py-10">
-          <div className="bg-white border border-steel-200 rounded p-6">
-            <p className="text-sm text-steel-400">Loading shipment details...</p>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+          <div className="bg-white border border-steel-200 rounded p-4 sm:p-6">
+            <p className="text-xs sm:text-sm text-steel-400">Loading shipment details...</p>
           </div>
         </div>
       </main>
@@ -41,13 +41,13 @@ export default function TrackingDetailPage() {
     return (
       <main className="min-h-screen bg-steel-100">
         <Navbar />
-        <div className="max-w-5xl mx-auto px-4 py-10">
-          <div className="bg-white border border-steel-200 rounded p-8 text-center">
-            <h2 className="font-display text-4xl font-bold text-navy-900">Shipment Not Found</h2>
-            <p className="text-sm text-steel-400 mt-3">No shipment found for <span className="font-mono text-ocean-600">{code}</span>.</p>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+          <div className="bg-white border border-steel-200 rounded p-4 sm:p-8 text-center">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900">Shipment Not Found</h2>
+            <p className="text-xs sm:text-sm text-steel-400 mt-2 sm:mt-3">No shipment found for <span className="font-mono text-ocean-600">{code}</span>.</p>
             <button
               onClick={() => router.push('/')}
-              className="mt-5 bg-navy-900 text-white px-4 py-2 text-sm font-semibold rounded hover:bg-navy-800 transition-colors"
+              className="mt-4 sm:mt-5 bg-navy-900 text-white px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded hover:bg-navy-800 transition-colors"
             >
               Return Home
             </button>
@@ -61,22 +61,22 @@ export default function TrackingDetailPage() {
   return (
     <main className="min-h-screen bg-steel-100">
       <Navbar />
-      <div className="max-w-5xl mx-auto px-4 py-10">
-        <div className="bg-white border border-steel-200 rounded p-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+        <div className="bg-white border border-steel-200 rounded p-4 sm:p-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
             <div>
-              <p className="font-mono text-sm text-ocean-600">{shipment.id}</p>
-              <h1 className="font-display text-4xl font-bold text-navy-900 mt-1">{shipment.vessel}</h1>
+              <p className="font-mono text-xs sm:text-sm text-ocean-600">{shipment.id}</p>
+              <h1 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-navy-900 mt-1">{shipment.vessel}</h1>
             </div>
             <StatusBadge status={shipment.status} />
           </div>
         </div>
 
-        <div className="mt-5">
+        <div className="mt-4 sm:mt-5">
           <ShipmentProgressBar status={shipment.status} />
         </div>
 
-        <div className="mt-5 grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className="mt-4 sm:mt-5 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5">
           <ShipmentSummary trackingCode={code} />
           <ActivityFeed timeline={shipment.timeline} />
         </div>
