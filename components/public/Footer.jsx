@@ -16,15 +16,15 @@ export default function Footer() {
               Enterprise-grade shipping and logistics infrastructure trusted by multinational supply chains.
             </p>
             <div className="flex items-center gap-3 mt-4">
-              <a href="#" className="hover:text-white transition-colors" title="Email">
+              <a  href="mailto:eventful049@gmail.com" className="hover:text-white transition-colors" title="Email">
                 <Mail className="w-4 h-4" />
               </a>
-              <a href="#" className="hover:text-white transition-colors" title="Share">
+              {/* <a href="#" className="hover:text-white transition-colors" title="Share">
                 <Share2 className="w-4 h-4" />
               </a>
               <a href="#" className="hover:text-white transition-colors" title="Website">
                 <Globe className="w-4 h-4" />
-              </a>
+              </a> */}
             </div>
           </div>
 

@@ -17,7 +17,7 @@ export default function Home() {
     <main className="bg-white">
       <Navbar />
       <HeroSection />
-      <QuickActionCards />
+      {/* <QuickActionCards /> */}
       <ServiceCards />
       <GlobalStatsSection />
       <EnterpriseSolutions />
